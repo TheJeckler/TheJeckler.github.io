@@ -24,8 +24,11 @@
 <script>
 
 var box = document.getElementById("box")
-box.style.width = "100px"
-box.style.height = "100px"
-box.style.left = "300px"
+setInterval(update,50)
+var x = 100
+function update() {
+box.style.left= x+"px";
+x=x+5
+}
 
 </script>
