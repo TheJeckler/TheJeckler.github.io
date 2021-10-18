@@ -26,9 +26,17 @@
 var box = document.getElementById("box")
 setInterval(update,50)
 var x = 100
+var screenwidth = 1401
+var speed = 15
 function update() {
 box.style.left= x+"px";
-x=x+5
+
+x=x+speed
+if (x >= window.innerWidth) {
+    speed=-15
+} else if (x<=0) {
+    speed = 15
+}
 }
 
 </script>
