@@ -3,14 +3,24 @@
 
 <head>
     <style>
-    #box {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    position: absolute;
-
-    }    
-
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+        #box2 {
+            width: 40px;
+            height:40px;
+            background-color: rgb(75, 3, 75);
+            position: absolute
+        }
+        #box3 {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            position: absolute
+        }
     </style>
 </head>
 
@@ -18,25 +28,79 @@
     <div id="box">
 
     </div>
+    <div id="box2">
+
+    </div>
+    <div id="box3">
+
+    </div>
 </body>
 
 </html>
 <script>
 
-var box = document.getElementById("box")
-setInterval(update,50)
-var x = 100
-var screenwidth = 1401
-var speed = 15
-function update() {
-box.style.left= x+"px";
-
-x=x+speed
-if (x >= window.innerWidth) {
-    speed=-15
-} else if (x<=0) {
-    speed = 15
-}
-}
-
+    var box = document.getElementById("box")
+    setInterval(update, 10)
+    var box2 = document.getElementById("box2")
+    var box3 = document.getElementById("box3")
+    var x = 0
+    var y = 0
+    var x2 = 450
+    var y2 = 70
+    var x3 = 100
+    var y3=250
+    var speedx = 15
+    var speedy = 15
+    var speedx2 = 20
+    var speedy2= 20
+    var speedx3 = 30
+    var speedy3 = 30
+    function update() {
+        box.style.left = x + "px";
+        box.style.top = y + "px";
+        box2.style.left = x2 + "px";
+        box2.style.top = y2 + "px";
+        box3.style.left = x3 + "px";
+        box3.style.top = y3 + "px";
+        y = y + speedy
+        x = x + speedx
+        y2 = y2 + speedy2
+        x2 = x2 + speedx2
+        y3 = y3 + speedy3
+        x3 = x3 + speedx3
+        if (x >= window.innerWidth - 50) {
+            speedx = -15
+        }
+        if (x < 0) {
+            speedx = 15
+        }
+        if (y >= window.innerHeight - 50) {
+            speedy = -speedy
+        } if (y < 0) {
+            speedy = -speedy
+        }
+        if (x2 >= window.innerWidth - 50) {
+            speedx2 = -15
+        }
+        if (x2 < 0) {
+            speedx2 = 15
+        }
+        if (y2 >= window.innerHeight - 50) {
+            speedy2 = -speedy2
+        } if (y2 < 0) {
+            speedy2 = -speedy2
+        }
+        if (x3 >= window.innerWidth - 100) {
+            speedx3 = -30
+        }
+        if (x3 < 0) {
+            speedx3 = 30
+        }
+        if (y3 >= window.innerHeight - 100) {
+            speedy3 = -speedy3
+        }
+        if (y3 < 0) {
+            speedy3 = -speedy3
+        }
+    }
 </script>
