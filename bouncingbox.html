@@ -16,8 +16,8 @@
             position: absolute
         }
         #box3 {
-            width: 100px;
-            height: 100px;
+            width: 75px;
+            height: 75px;
             background-color: black;
             position: absolute
         }
@@ -38,69 +38,101 @@
 
 </html>
 <script>
-
+    setInterval(update, 50)
+//boxes//
     var box = document.getElementById("box")
-    setInterval(update, 10)
     var box2 = document.getElementById("box2")
     var box3 = document.getElementById("box3")
+
+    box.addEventListener("click",BoxClick)
+
     var x = 0
     var y = 0
+
+
     var x2 = 450
     var y2 = 70
+
+
     var x3 = 100
     var y3=250
-    var speedx = 15
-    var speedy = 15
-    var speedx2 = 20
-    var speedy2= 20
-    var speedx3 = 30
-    var speedy3 = 30
+    var speedx = 5
+    var speedy = 5
+
+
+    var speedx2 = 10
+    var speedy2= 10
+
+
+    var speedx3 = 15
+    var speedy3 = 15
+      function BoxClick() {
+            speedx=speedx+1
+        }
+        if 
+    //box movement//
     function update() {
+  
         box.style.left = x + "px";
         box.style.top = y + "px";
+
+
         box2.style.left = x2 + "px";
         box2.style.top = y2 + "px";
+
+
         box3.style.left = x3 + "px";
         box3.style.top = y3 + "px";
         y = y + speedy
         x = x + speedx
+
+
         y2 = y2 + speedy2
         x2 = x2 + speedx2
+
+
         y3 = y3 + speedy3
         x3 = x3 + speedx3
+
+        //box 1 collision//
         if (x >= window.innerWidth - 50) {
-            speedx = -15
+            speedx = -5
         }
         if (x < 0) {
-            speedx = 15
+            speedx = 5
         }
         if (y >= window.innerHeight - 50) {
             speedy = -speedy
         } if (y < 0) {
             speedy = -speedy
         }
-        if (x2 >= window.innerWidth - 50) {
-            speedx2 = -15
+
+        //box 2 collision//
+        if (x2 >= window.innerWidth - 40) {
+            speedx2 = -10
         }
         if (x2 < 0) {
-            speedx2 = 15
+            speedx2 = 10
         }
-        if (y2 >= window.innerHeight - 50) {
+        if (y2 >= window.innerHeight - 40) {
             speedy2 = -speedy2
         } if (y2 < 0) {
             speedy2 = -speedy2
         }
-        if (x3 >= window.innerWidth - 100) {
-            speedx3 = -30
+
+        //box 3 collision//
+        if (x3 >= window.innerWidth - 75) {
+            speedx3 = -15
         }
         if (x3 < 0) {
-            speedx3 = 30
+            speedx3 = 15
         }
-        if (y3 >= window.innerHeight - 100) {
+        if (y3 >= window.innerHeight - 75) {
             speedy3 = -speedy3
         }
         if (y3 < 0) {
             speedy3 = -speedy3
         }
     }
+
 </script>
