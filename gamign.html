@@ -45,8 +45,10 @@
         <button class="center">
         
 <img id="Image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwpNEOsTWUX9kzyLIrOgTWkw_8HyY0Bi-583rDf7ea-2tHCXRyMUG2ZDz_Qpwkxt9iO6I&usqp=CAU" class="center2"> </button>
- 
-<p class="center">I am going to die on 4:37 EST on October 27th 2021.</p>
+ <div id="Score">
+Bri'ish People =  
+ </div>
+<p class="center">I am going to die at 4:37 EST on October 28th 2021.</p>
 This text will no longer be invisible when the site is fully open.
 <div class="Website Links List 1"
 <p class="lower margin-right">
@@ -62,7 +64,11 @@ This text will no longer be invisible when the site is fully open.
         var Score = 0
         Image.addEventListener("click",ImageClick)
         function ImageClick() {
-            
+            Score=Score+1
+            document.getElementById("Score").innerText = "Bri'ish People = " + Score
         }
-        
+        setInterval(update,500)
+        function update() {
+            Score=Score+1
+        }
     </script>
