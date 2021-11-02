@@ -47,14 +47,14 @@
         
 <img id="Image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwpNEOsTWUX9kzyLIrOgTWkw_8HyY0Bi-583rDf7ea-2tHCXRyMUG2ZDz_Qpwkxt9iO6I&usqp=CAU" class="center2"> </button>
  <div id="Score">
-Bri'ish People =  
+Bri'ish People = 0 
  </div>
  <div>
  <button id = "Button2" class = "Center" src = ""> 
-     Start/Stop Auto Clicks
+     The Queen
      </button> </div>
-<p class="center">I am going to die at 4:37 EST on November 2nd 2021.</p>
-This text will no longer be invisible when the site is fully open.
+<p class="center">I am going to die at 4:37 EST on November 3rd 2021.</p>
+
 <div class="Website Links List 1"
 <p class="lower margin-right">
     <p> <a href="portfolio.html"> Portfolio Page</a></p>
@@ -67,8 +67,10 @@ This text will no longer be invisible when the site is fully open.
 
         var Image = document.getElementById("Image")
         var Score = 0
-        var UpgradeToggle = true
-        document.getElementById("Button2").addEventListener("TheButtonClick",stop)
+        var ScorePerInterval = 0
+
+
+        document.getElementById("Button2").addEventListener("click",UpgradeButton1)
         Image.addEventListener("click",ImageClick)
 
         //Clickable Box in center//
@@ -80,12 +82,10 @@ This text will no longer be invisible when the site is fully open.
         //Clicks per second//
         setInterval(update,250)
         function update() {
-            Score=Score+1
+            Score=Score+ScorePerInterval
             document.getElementById("Score").innerText = "Bri'ish People = " + Score
         }
-        function TheButtonClick() {
-            if(UpgradeToggle = false) {
-                
-            }
+        function UpgradeButton1() {
+            ScorePerInterval=ScorePerInterval+1
         }
     </script>
