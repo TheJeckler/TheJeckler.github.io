@@ -50,8 +50,8 @@
 Bri'ish People = 0 
  </div>
  <div>
- <button id = "Button2" class = "Center" src = ""> 
-     The Queen
+ <button id = "Button1" class = "Center" src = ""> 
+     The Queen, +1
      </button> </div>
 <p class="center">I am going to die at 4:37 EST on November 3rd 2021.</p>
 
@@ -70,7 +70,7 @@ Bri'ish People = 0
         var ScorePerInterval = 0
 
 
-        document.getElementById("Button2").addEventListener("click",UpgradeButton1)
+        document.getElementById("Button1").addEventListener("click",UpgradeButton1)
         Image.addEventListener("click",ImageClick)
 
         //Clickable Box in center//
@@ -80,12 +80,17 @@ Bri'ish People = 0
         }
 
         //Clicks per second//
-        setInterval(update,250)
+        setInterval(update,500)
         function update() {
             Score=Score+ScorePerInterval
             document.getElementById("Score").innerText = "Bri'ish People = " + Score
         }
+
+        //The Queen Upgrade//
         function UpgradeButton1() {
-            ScorePerInterval=ScorePerInterval+1
+            if (Score >= 5){
+            ScorePerInterval=ScorePerInterval+0.5
+            Score=Score-5
+            }
         }
     </script>
