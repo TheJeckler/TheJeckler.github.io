@@ -10,8 +10,8 @@
             color: rgb(0, 0, 0)
         }
             img {
-                height: 300px;
-                width: 300px;
+                height: 100px;
+                width: 100px;
             }
             button {
                 background-color:rgb(255, 255, 255)
@@ -38,6 +38,9 @@
   width: 100%;
   height: 100%;
 }
+.body2 {
+    color:white
+}
 
         </style>
     </head>
@@ -46,14 +49,16 @@
         <button class="center">
         
 <img id="Image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwpNEOsTWUX9kzyLIrOgTWkw_8HyY0Bi-583rDf7ea-2tHCXRyMUG2ZDz_Qpwkxt9iO6I&usqp=CAU" class="center2"> </button>
- <div id="Score">
+ <div id="Score" class= "center">
 Bri'ish People = 0 
  </div>
  <div>
- <button id = "Button1" class = "Center" src = ""> 
-     The Queen, +1
+     <img id="Image" src="https://d.newsweek.com/en/full/1915868/queen-elizabeth-ii-ascot.jpg?w=466&h=311&f=22e6fd48a2d386a35d914f01e53ecad6">
+ <button id = "Button1"  class = "" src = ""> 
+     The Queen, +1/Sec
      </button> </div>
-<p class="center">I am going to die at 4:37 EST on November 3rd 2021.</p>
+     <div id="ShowCostQueen" class="body2">Costs = 10</div>
+<p class="center">I am going to die at 4:37 EST on November 4th 2021.</p>
 
 <div class="Website Links List 1"
 <p class="lower margin-right">
@@ -68,10 +73,12 @@ Bri'ish People = 0
         var Image = document.getElementById("Image")
         var Score = 0
         var ScorePerInterval = 0
-
+        var CostQueen = 10
+        var ShowCostQueen
 
         document.getElementById("Button1").addEventListener("click",UpgradeButton1)
         Image.addEventListener("click",ImageClick)
+        
 
         //Clickable Box in center//
         function ImageClick() {
@@ -88,9 +95,11 @@ Bri'ish People = 0
 
         //The Queen Upgrade//
         function UpgradeButton1() {
-            if (Score >= 5){
+            if (Score >= CostQueen){
             ScorePerInterval=ScorePerInterval+0.5
-            Score=Score-5
+            Score=Score-CostQueen
+            CostQueen=CostQueen+10
+            document.getElementById("ShowCostQueen").innerText = "Costs = " + CostQueen
             }
         }
     </script>
