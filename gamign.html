@@ -11,8 +11,8 @@
         }
             img {
                 height: 100px;
-                width: 100px;
-            }
+                width: 100px; }
+
             button {
                 background-color:rgb(255, 255, 255)
             }
@@ -30,6 +30,7 @@
   margin-right: auto;
   width: 20%;
   height: 100%;
+  place-content: ;
 }
 .center2 {
   display: block;
@@ -37,6 +38,13 @@
   margin-right: auto;
   width: 100%;
   height: 100%;
+}
+.Dentist {
+display: block;
+margin-left: 00px;
+margin-right:auto;
+width:100px;
+height:100px;
 }
 .body2 {
     color:white
@@ -50,7 +58,7 @@
         
 <img id="Image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwpNEOsTWUX9kzyLIrOgTWkw_8HyY0Bi-583rDf7ea-2tHCXRyMUG2ZDz_Qpwkxt9iO6I&usqp=CAU" class="center2"> </button>
  <div id="Score" class= "center">
-Bri'ish People = 0 
+British people = 0 
  </div>
  <div>
      <img id="Image" src="https://d.newsweek.com/en/full/1915868/queen-elizabeth-ii-ascot.jpg?w=466&h=311&f=22e6fd48a2d386a35d914f01e53ecad6">
@@ -58,7 +66,12 @@ Bri'ish People = 0
      The Queen, +1/Sec
      </button> </div>
      <div id="ShowCostQueen" class="body2">Costs = 10</div>
-<p class="center">I am going to die at 4:37 EST on November 4th 2021.</p>
+     <div id="YouHaveXQueens" class="body">You have 0 Queens </div>
+
+     <img id="Image2" class="Dentist" src="https://cdn.iflscience.com/images/996c1cd6-0d0c-5a6e-b5c7-e9024920786c/default-1464383042-190-english-people-don-t-actually-have-worse-teeth-than-americans.jpg"
+     <div id="ShowCostDentist" class="body2">Costs = 200 </div>
+     <div id="YouhaveXDentists" class="body"> You have 0 Dentists</div>
+<p class="center" id="BritsPerSecond">You are making 0 British people per second.</p>
 
 <div class="Website Links List 1"
 <p class="lower margin-right">
@@ -70,11 +83,31 @@ Bri'ish People = 0
     </html>
     <script>
 
-        var Image = document.getElementById("Image")
+       
         var Score = 0
         var ScorePerInterval = 0
+
+        //Queen Variables//
+        var Image = document.getElementById("Image")
         var CostQueen = 10
         var ShowCostQueen
+        var YouHaveXQueens = 0
+
+        //Dentist Variables//
+        var Image = document.getElementById("Image2")
+        var CostDentist = 200
+        var ShowCostDentist
+        var YouHaveXDentists
+
+        //London Variables//
+        var CostLondon
+        var ShowCostLondon
+        var YouHaveXLondons
+
+        //Spices Variables//
+        var CostSpices
+        var ShowCostSpices
+        var YouHaveXSpices
 
         document.getElementById("Button1").addEventListener("click",UpgradeButton1)
         Image.addEventListener("click",ImageClick)
@@ -83,14 +116,15 @@ Bri'ish People = 0
         //Clickable Box in center//
         function ImageClick() {
             Score=Score+1
-            document.getElementById("Score").innerText = "Bri'ish People = " + Score
+            document.getElementById("Score").innerText = "British people = " + Score
         }
 
         //Clicks per second//
         setInterval(update,500)
         function update() {
             Score=Score+ScorePerInterval
-            document.getElementById("Score").innerText = "Bri'ish People = " + Score
+            document.getElementById("Score").innerText = "British people = " + Score
+            document.getElementById("BritsPerSecond").innerText = "You are making " + ScorePerInterval*2 + " British people per second."
         }
 
         //The Queen Upgrade//
@@ -99,7 +133,18 @@ Bri'ish People = 0
             ScorePerInterval=ScorePerInterval+0.5
             Score=Score-CostQueen
             CostQueen=CostQueen+10
+            YouHaveXQueens = YouHaveXQueens+1
             document.getElementById("ShowCostQueen").innerText = "Costs = " + CostQueen
+            document.getElementById("YouHaveXQueens").innerText = "You have = " + YouHaveXQueens + " Queen(s)"
             }
+        //Dentist Upgrade//
+        function UpgradeButton2()
+            if (Score >= CostDentist) {
+            ScorePerInterval=ScorePerInterval+2.5
+            Score=Score-CostDentist
+            YouHaveXDentists = YouHaveXDentists+1
+            CostDentist=CostDentist+200
+            
+        }
         }
     </script>
