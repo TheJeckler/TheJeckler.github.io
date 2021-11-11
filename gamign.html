@@ -1,150 +1,184 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <style>
-            p {
-  color: rgb(10, 97, 25);
-    }
+
+<head>
+
+    <style>
+        p {
+            color: rgb(10, 97, 25);
+        }
+
         body {
             color: rgb(0, 0, 0)
         }
-            img {
-                height: 100px;
-                width: 100px; }
 
-            button {
-                background-color:rgb(255, 255, 255)
-            }
-            body {
+        img {
+            height: 100px;
+            width: 100px;
+        }
+
+        button {
+            background-color: rgb(255, 255, 255)
+        }
+
+        body {
             background-image: url("https://media.istockphoto.com/vectors/union-jack-vector-id486407806?k=20&m=486407806&s=612x612&w=0&h=J0x_Q-C-PFCH1PWMWYOyv4O-8LUEBLWtiGM427scKFk=");
-                background-size:cover;
-                background-repeat: repeat;
-            }
-            
-           
+            background-size: cover;
+            background-repeat: repeat;
+        }
+
+
 
         .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
-  height: 100%;
-  place-content: ;
-}
-.center2 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 100%;
-}
-.Dentist {
-display: block;
-margin-left: 00px;
-margin-right:auto;
-width:100px;
-height:100px;
-}
-.body2 {
-    color:white
-}
-
-        </style>
-    </head>
-    <body>
-        
-        <button class="center">
-        
-<img id="Image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwpNEOsTWUX9kzyLIrOgTWkw_8HyY0Bi-583rDf7ea-2tHCXRyMUG2ZDz_Qpwkxt9iO6I&usqp=CAU" class="center2"> </button>
- <div id="Score" class= "center">
-British people = 0 
- </div>
- <div>
-     <img id="Image" src="https://d.newsweek.com/en/full/1915868/queen-elizabeth-ii-ascot.jpg?w=466&h=311&f=22e6fd48a2d386a35d914f01e53ecad6">
- <button id = "Button1"  class = "" src = ""> 
-     The Queen, +1/Sec
-     </button> </div>
-     <div id="ShowCostQueen" class="body2">Costs = 10</div>
-     <div id="YouHaveXQueens" class="body">You have 0 Queens </div>
-
-     <img id="Image2" class="Dentist" src="https://cdn.iflscience.com/images/996c1cd6-0d0c-5a6e-b5c7-e9024920786c/default-1464383042-190-english-people-don-t-actually-have-worse-teeth-than-americans.jpg"
-     <div id="ShowCostDentist" class="body2">Costs = 200 </div>
-     <div id="YouhaveXDentists" class="body"> You have 0 Dentists</div>
-<p class="center" id="BritsPerSecond">You are making 0 British people per second.</p>
-
-<div class="Website Links List 1"
-<p class="lower margin-right">
-    <p> <a href="portfolio.html"> Portfolio Page</a></p>
-
-    </body>
-
-
-    </html>
-    <script>
-
-       
-        var Score = 0
-        var ScorePerInterval = 0
-
-        //Queen Variables//
-        var Image = document.getElementById("Image")
-        var CostQueen = 10
-        var ShowCostQueen
-        var YouHaveXQueens = 0
-
-        //Dentist Variables//
-        var Image = document.getElementById("Image2")
-        var CostDentist = 200
-        var ShowCostDentist
-        var YouHaveXDentists
-
-        //London Variables//
-        var CostLondon
-        var ShowCostLondon
-        var YouHaveXLondons
-
-        //Spices Variables//
-        var CostSpices
-        var ShowCostSpices
-        var YouHaveXSpices
-
-        document.getElementById("Button1").addEventListener("click",UpgradeButton1)
-        Image.addEventListener("click",ImageClick)
-        
-
-        //Clickable Box in center//
-        function ImageClick() {
-            Score=Score+1
-            document.getElementById("Score").innerText = "British people = " + Score
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+            height: 100%;
         }
 
-        //Clicks per second//
-        setInterval(update,500)
-        function update() {
-            Score=Score+ScorePerInterval
-            document.getElementById("Score").innerText = "British people = " + Score
-            document.getElementById("BritsPerSecond").innerText = "You are making " + ScorePerInterval*2 + " British people per second."
+        .center2 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            height: 100%;
         }
+        .centerBoris {
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            width:70%;
+            height:40%;
+        }
+        .Queen {
+            display:block;
+            margin-left:00px;
+            margin-top:100px;
+            width:100px;
+            height:100px;
+        }
+        .Dentist {
+            display: block;
+            margin-left: 00px;
+            margin-right: auto;
+            width: 100px;
+            height: 100px;
+        }
+        .body2 {
+            color: white
+        }
+    </style>
+</head>
 
-        //The Queen Upgrade//
-        function UpgradeButton1() {
-            if (Score >= CostQueen){
-            ScorePerInterval=ScorePerInterval+0.5
-            Score=Score-CostQueen
-            CostQueen=CostQueen+10
-            YouHaveXQueens = YouHaveXQueens+1
+<body>
+
+    <button class="center">
+
+        <img id="Image" class="centerBoris"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwpNEOsTWUX9kzyLIrOgTWkw_8HyY0Bi-583rDf7ea-2tHCXRyMUG2ZDz_Qpwkxt9iO6I&usqp=CAU"
+            class="center2"> </button>
+    <div id="Score" class="center">
+        British people = 0
+    </div>
+    <div>
+        <img id="Image" class="Queen"
+            src="https://d.newsweek.com/en/full/1915868/queen-elizabeth-ii-ascot.jpg?w=466&h=311&f=22e6fd48a2d386a35d914f01e53ecad6">
+        <button id="Button1" class="" src="">
+            The Queen, +1/Sec
+        </button>
+    </div>
+    <div id="ShowCostQueen" class="body2">Costs = 10</div>
+    <div id="YouHaveXQueens" class="body">You have 0 Queen(s) </div>
+
+
+    <img class="Dentist"
+        src="https://cdn.iflscience.com/images/996c1cd6-0d0c-5a6e-b5c7-e9024920786c/default-1464383042-190-english-people-don-t-actually-have-worse-teeth-than-americans.jpg">
+    <button id="Button2">A Dentist, +5/Sec</button>
+    <div id="ShowCostDentist" class="body2">Costs = 200 </div>
+    <div id="YouHaveXDentists" class="body"> You have 0 Dentist(s)</div>
+    <p class="center" id="BritsPerSecond">You are making 0 British people per second.</p>
+
+
+
+    <div class="Website Links List 1" <p class="lower margin-right">
+        <p> <a href="portfolio.html"> Portfolio Page</a></p>
+
+</body>
+
+
+</html>
+<script>
+
+
+    var Score = 1000000
+    var ScorePerInterval = 0
+
+    //Queen Variables//
+
+    var CostQueen = 10
+    var ShowCostQueen
+    var YouHaveXQueens = 0
+
+    //Dentist Variables//
+
+    var CostDentist = 200
+    var ShowCostDentist
+    var YouHaveXDentists = 0
+
+    //London Variables//
+    var CostLondon
+    var ShowCostLondon
+    var YouHaveXLondons
+
+    //Spices Variables//
+    var CostSpices
+    var ShowCostSpices
+    var YouHaveXSpices
+
+    document.getElementById("Button1").addEventListener("click", UpgradeButton1)
+    document.getElementById("Button2").addEventListener("click", UpgradeButton2)
+    document.getElementById("Image").addEventListener("click", ImageClick)
+    document.getElementById("Image").addEventListener("click", ImageClick)
+
+
+
+    //Clickable Box in center//
+    function ImageClick() {
+        Score = Score + 1
+        document.getElementById("Score").innerText = "British people = " + Score
+    }
+
+    //Clicks per second//
+    setInterval(update, 500)
+    function update() {
+        Score = Score + ScorePerInterval
+        document.getElementById("Score").innerText = "British people = " + Score
+        document.getElementById("BritsPerSecond").innerText = "You are making " + ScorePerInterval * 2 + " British people per second."
+    }
+
+    //The Queen Upgrade//
+    function UpgradeButton1() {
+        if (Score >= CostQueen) {
+            ScorePerInterval = ScorePerInterval + 0.5
+            Score = Score - CostQueen
+            CostQueen = CostQueen + 10
+            YouHaveXQueens = YouHaveXQueens + 1
             document.getElementById("ShowCostQueen").innerText = "Costs = " + CostQueen
-            document.getElementById("YouHaveXQueens").innerText = "You have = " + YouHaveXQueens + " Queen(s)"
-            }
-        //Dentist Upgrade//
-        function UpgradeButton2()
-            if (Score >= CostDentist) {
-            ScorePerInterval=ScorePerInterval+2.5
-            Score=Score-CostDentist
-            YouHaveXDentists = YouHaveXDentists+1
-            CostDentist=CostDentist+200
-            
+            document.getElementById("YouHaveXQueens").innerText = "You have " + YouHaveXQueens + " Queen(s)"
         }
+    }
+    //Dentist Upgrade//
+    function UpgradeButton2() {
+
+        if (Score >= CostDentist) {
+            ScorePerInterval = ScorePerInterval + 2.5
+            Score = Score - CostDentist
+            YouHaveXDentists = YouHaveXDentists + 1
+            CostDentist = CostDentist + 200
+            document.getElementById("ShowCostDentist").innerText = "Costs = " + CostDentist
+            document.getElementById("YouHaveXDentists").innerText = "You have " + YouHaveXDentists + " Dentist(s)"
         }
-    </script>
+    }
+
+</script>
