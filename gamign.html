@@ -73,7 +73,7 @@
             height:100px;
         }
         .body2 {
-            color: white
+            color: rgb(0, 0, 0)
         }
     </style>
 </head>
@@ -195,8 +195,10 @@
             document.getElementById("YouHaveXDentists").innerText = "You have " + YouHaveXDentists + " Dentist(s)"
         }
     }
+    //Big Ben Upgrade//
     function UpgradeButton3() {
-        if (Score >=CostDentist) {
+
+        if (Score >=CostBen) {
             ScorePerInterval = ScorePerInterval+ 5
             Score = Score - CostBen
             YouHaveXBens = YouHaveXBens + 1
