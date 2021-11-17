@@ -65,6 +65,13 @@
             width: 100px;
             height: 100px;
         }
+        .Ben {
+            display:block;
+            margin-left:00px;
+            margin-right:auto;
+            width:100px;
+            height:100px;
+        }
         .body2 {
             color: white
         }
@@ -81,6 +88,7 @@
     <div id="Score" class="center">
         British people = 0
     </div>
+    <p class="center" id="BritsPerSecond">You are making 0 British people per second.</p>
     <div>
         <img id="Image" class="Queen"
             src="https://d.newsweek.com/en/full/1915868/queen-elizabeth-ii-ascot.jpg?w=466&h=311&f=22e6fd48a2d386a35d914f01e53ecad6">
@@ -93,12 +101,18 @@
 
 
     <img class="Dentist"
-        src="https://cdn.iflscience.com/images/996c1cd6-0d0c-5a6e-b5c7-e9024920786c/default-1464383042-190-english-people-don-t-actually-have-worse-teeth-than-americans.jpg">
+    src="https://cdn.iflscience.com/images/996c1cd6-0d0c-5a6e-b5c7-e9024920786c/default-1464383042-190-english-people-don-t-actually-have-worse-teeth-than-americans.jpg">
     <button id="Button2">A Dentist, +5/Sec</button>
     <div id="ShowCostDentist" class="body2">Costs = 200 </div>
     <div id="YouHaveXDentists" class="body"> You have 0 Dentist(s)</div>
-    <p class="center" id="BritsPerSecond">You are making 0 British people per second.</p>
 
+    
+
+    <img class="Ben" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRilFhCxx-c48d5whRyOz9xhjyQ4pj5X3QkJQ&usqp=CAU">
+    <button id="Button3"> Big Ben, +10/Sec</button>
+    <div id="ShowCostBen" class="body2"> Costs = 1000</div>
+    <div id="YouHaveXBens" class="body"> You have 0 Big Ben(s)</div>
+    
 
 
     <div class="Website Links List 1" <p class="lower margin-right">
@@ -127,17 +141,18 @@
     var YouHaveXDentists = 0
 
     //London Variables//
-    var CostLondon
-    var ShowCostLondon
-    var YouHaveXLondons
+    var CostBen = 1000
+    var ShowCostBen
+    var YouHaveXBens = 0
 
     //Spices Variables//
-    var CostSpices
+    var CostSpices = 5000
     var ShowCostSpices
-    var YouHaveXSpices
+    var YouHaveXSpices = 0
 
     document.getElementById("Button1").addEventListener("click", UpgradeButton1)
     document.getElementById("Button2").addEventListener("click", UpgradeButton2)
+    document.getElementById("Button3").addEventListener("click", UpgradeButton3)
     document.getElementById("Image").addEventListener("click", ImageClick)
     document.getElementById("Image").addEventListener("click", ImageClick)
 
@@ -180,5 +195,14 @@
             document.getElementById("YouHaveXDentists").innerText = "You have " + YouHaveXDentists + " Dentist(s)"
         }
     }
-
+    function UpgradeButton3() {
+        if (Score >=CostDentist) {
+            ScorePerInterval = ScorePerInterval+ 5
+            Score = Score - CostBen
+            YouHaveXBens = YouHaveXBens + 1
+            CostBen = CostBen + 1000
+            document.getElementById("ShowCostBen").innerText = "Costs = " + CostBen
+            document.getElementById("YouHaveXBens").innerText = "You have " + YouHaveXBens + " Big Ben(s)"
+        }
+    }
 </script>
