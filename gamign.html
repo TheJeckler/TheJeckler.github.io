@@ -109,7 +109,7 @@
     
 
     <img class="Ben" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRilFhCxx-c48d5whRyOz9xhjyQ4pj5X3QkJQ&usqp=CAU">
-    <button id="Button3"> Big Ben, +10/Sec</button>
+    <button id="Button3"> Big Ben, +30/Sec</button>
     <div id="ShowCostBen" class="body2"> Costs = 1000</div>
     <div id="YouHaveXBens" class="body"> You have 0 Big Ben(s)</div>
     
@@ -199,7 +199,7 @@
     function UpgradeButton3() {
 
         if (Score >=CostBen) {
-            ScorePerInterval = ScorePerInterval+ 5
+            ScorePerInterval = ScorePerInterval+ 15
             Score = Score - CostBen
             YouHaveXBens = YouHaveXBens + 1
             CostBen = CostBen + 1000
