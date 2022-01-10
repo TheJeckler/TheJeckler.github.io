@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="carImage.css" 
+</head>
+
+
+
+<body>
+    <img id="cartop" class="car1" src="https://thumbs.dreamstime.com/b/old-serbian-car-zastava-vintage-colors-retro-black-white-background-116456248.jpg">
+    <img id="carbottom" class="car2"
+        src="https://i.natgeofe.com/n/b35e2b97-d2a7-4da6-82fd-0a01d9e9a822/capybara_3x2.jpg">
+</body>
+
+
+
+<script>
+    var cartop = document.getElementById("cartop");
+    var carbottom = document.getElementById("carbottom");
+    var x = 0;
+    var x1 = 0;
+    var speed1 = 15;
+    var xAdd = 1
+    var xAdd1 = 1
+    document.addEventListener('keyup', keypress);
+
+    function keypress(e) {
+        if (e.key === "s") {
+            x = x + xAdd
+            xAdd = xAdd + 1
+            cartop.style.left = x + "px";
+        }
+        if (e.key === "w") {
+            x1 = x1 + xAdd1
+            xAdd1 = xAdd1 + 1
+            carbottom.style.left = x1 + "px"
+        }
+
+    }
+
+
+</script>
