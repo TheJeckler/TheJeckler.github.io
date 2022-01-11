@@ -4,6 +4,7 @@ img{
 
 #carbottom{
     margin-left: 0px;
+
     top:100px;
     height: 150px;
     width:150px;
@@ -19,6 +20,14 @@ img{
     height: 150px;
     width: 150px;
 }
+
+#FinishLine{
+    position: absolute;
+    width: 10px;
+    height: 500px;
+    color: blue;
+}
+
 @keyframes spin {
     100% {
         transform: rotateY(360deg);
