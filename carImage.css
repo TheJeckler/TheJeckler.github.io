@@ -22,10 +22,10 @@ img{
 }
 
 #FinishLine{
-    position: absolute;
+    margin-left: 1420px;
     width: 10px;
     height: 500px;
-    color: blue;
+    background-color: blue;
 }
 
 @keyframes spin {
