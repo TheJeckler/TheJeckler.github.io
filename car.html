@@ -24,9 +24,11 @@
     //Variables
     var x = 0;
     var x1 = 0;
-    var speed1 = 15;
     var xAdd = 1;
     var xAdd1 = 1;
+    var wPressed = false
+    var sPressed = false
+
 
     var Time = 0;
 
@@ -40,12 +42,24 @@
     //Timer
     setInterval(update,10)
     function update(){
+
+     
+        
+           cartop.style.left = x + "px"
+            x=x+xAdd
+
+        
+        
+            carbottom.style.left = x1 + "px"
+            x1=x1+xAdd1
+
+            
+
         Time = Time + 0.01
         document.getElementById("Timer").innerText = "Time: " + Time.toFixed(2) + " seconds"
+
     }
-
     
-
     // Starting Position
     topPosition = cartop.style.left = x + "px"
     bottomPosition = carbottom.style.left = x + "px"
@@ -57,20 +71,27 @@
     cartop.style.left
     cartop.style.top
 
-    // Top Car Keybind
+    // Bottom Car Keybind
     function keypress(e) {
         if (e.key === "s") {
-            x = x + xAdd
-            xAdd = xAdd + 1
+            x = x + xAdd;
+            xAdd = xAdd + 1;
             cartop.style.left = x + "px";
+            cartop.style.transform = "rotate(" + x + "deg)";
+            sPressed = true;
         }
 
-    // Bottom Car Keybind
+    // Top Car Keybind
         if (e.key === "w") {
-            x1 = x1 + xAdd1
-            xAdd1 = xAdd1 + 1
-            carbottom.style.left = x1 + "px"
+            x1 = x1 + xAdd1;
+            xAdd1 = xAdd1 + 1;
+            carbottom.style.left = x1 + "px";
+            wPressed = true;
         }
+    }
+    //Top Car Movement
+
+
 
     // Winner
         
@@ -78,5 +99,5 @@
 
     //Timer
 
-    }
+    
 </script>
