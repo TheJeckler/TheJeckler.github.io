@@ -9,8 +9,8 @@
 
 <body>
     <p id="Timer">Time: 0 seconds</p>
-    <img id="cartop" class="car1" src="https://thumbs.dreamstime.com/b/old-serbian-car-zastava-vintage-colors-retro-black-white-background-116456248.jpg">
-    <img id="carbottom" class="car2" src="https://i.natgeofe.com/n/b35e2b97-d2a7-4da6-82fd-0a01d9e9a822/capybara_3x2.jpg">
+    <img id="carbottom" class="car1" src="https://thumbs.dreamstime.com/b/old-serbian-car-zastava-vintage-colors-retro-black-white-background-116456248.jpg">
+    <img id="cartop" class="car2" src="https://i.natgeofe.com/n/b35e2b97-d2a7-4da6-82fd-0a01d9e9a822/capybara_3x2.jpg">
     <p id="FinishLine"></p>
 </body>
 
@@ -22,43 +22,47 @@
     var carbottom = document.getElementById("carbottom");
 
     //Variables
+    //Not sure what x and x1 are. xAdd variables are movement.
     var x = 0;
     var x1 = 0;
-    var xAdd = 1;
-    var xAdd1 = 1;
-    var wPressed = false
-    var sPressed = false
-
+    var xAdd = .1;
+    var xAdd1 = .1;
 
     var Time = 0;
 
     // Finish Line / Winner
     var FinishLine = document.getElementById(FinishLine)
-    var Winner = 
 
-    // Collision
-    
 
     //Timer
     setInterval(update,10)
     function update(){
-
-     
-        
            cartop.style.left = x + "px"
             x=x+xAdd
 
-        
-        
             carbottom.style.left = x1 + "px"
             x1=x1+xAdd1
 
-            
+            Time = Time + 0.01
 
-        Time = Time + 0.01
+            cartop.style.transform = "rotate(" + x + "deg)";
+
+            if (x >= window.innerWidth - 180) {
+            xAdd = 0
+            Time = Time - 0.01
+            xAdd1 = 0
+            }
+             if (x1 >= window.innerWidth - 180) {
+            xAdd1 = 0
+            Time = Time - 0.01
+            xAdd = 0
+             }
+
         document.getElementById("Timer").innerText = "Time: " + Time.toFixed(2) + " seconds"
 
     }
+
+    
     
     // Starting Position
     topPosition = cartop.style.left = x + "px"
@@ -75,29 +79,16 @@
     function keypress(e) {
         if (e.key === "s") {
             x = x + xAdd;
-            xAdd = xAdd + 1;
+            xAdd = xAdd + .1;
             cartop.style.left = x + "px";
-            cartop.style.transform = "rotate(" + x + "deg)";
-            sPressed = true;
+
         }
 
     // Top Car Keybind
         if (e.key === "w") {
             x1 = x1 + xAdd1;
-            xAdd1 = xAdd1 + 1;
+            xAdd1 = xAdd1 + .1;
             carbottom.style.left = x1 + "px";
-            wPressed = true;
         }
     }
-    //Top Car Movement
-
-
-
-    // Winner
-        
-
-
-    //Timer
-
-    
 </script>

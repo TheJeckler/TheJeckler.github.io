@@ -4,13 +4,11 @@ img{
 
 #carbottom{
     margin-left: 0px;
-
     top:100px;
     height: 150px;
     width:150px;
-
     animation-name: spin;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
