@@ -19,12 +19,16 @@
 
 
 <script>
+
+    document.addEventListener("cartopwins").addEventListener("click", reset)
+    document.addEventListener("carbottomwins").addEventListener("click", reset)
+
     // Cars
     var cartop = document.getElementById("cartop");
     var carbottom = document.getElementById("carbottom");
 
     //Variables
-    //Not sure what x and x1 are. xAdd variables are movement.
+    //X is bottom car, X1 is top car
     var x = 0;
     var x1 = 0;
     var xAdd = .1;
@@ -56,18 +60,22 @@
             xAdd = 0
             Time = Time - 0.01
             xAdd1 = 0
-
+            document.getElementById("carbottomwins").style.display="block"
         }
         if (x1 >= 1250) {
             xAdd1 = 0
             Time = Time - 0.01
             xAdd = 0
+            document.getElementById("cartopwins").style.display="block"
         }
 
         document.getElementById("Timer").innerText = "Time: " + Time.toFixed(2) + " seconds"
 
     }
 
+    function reset(){
+        
+    }
 
 
     // Starting Position
