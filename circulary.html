@@ -13,11 +13,37 @@
 </html>
 
 <script>
-
+setInterval(update,50)
 document.getElementById("canvas")
 
+canvas.width = innerWidth
+canvas.height = innerHeight
+
+var x = 200
+var y = 100
+
 var ctx = canvas.getContext("2d")
+var ctx2 = canvas.getContext("2d")
+var ctx3 = canvas.getContext("2d")
+
 ctx.fillStyle="mediumpurple"
-ctx.fillRect(10,10,100,100)
+ctx2.fillStyle="red"
+ctx3.fillStyle="green"
+
+function update(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+ctx.fillRect(x + 15,y - 10,100,100)
+
+
+ctx2.clearRect(0,0,canvas.width,canvas.height)
+ctx2.fillRect(x + 15, y - 4,100,100)
+
+ctx3.clearRect(0,0,canvas.width,canvas.height)
+ctx3.fillRect(x - 15,y + 10,100,100)
+
+x = x + 5
+y = y + 5
+}
 
 </script>
