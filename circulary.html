@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 </head>
 
 <body>
 
-<canvas id="canvas" width="600" height="600>"</canvas>
+    <canvas id="canvas" width="600" height="600>" </canvas>
 
 </body>
 
 </html>
 
 <script>
-setInterval(update,50)
-document.getElementById("canvas")
+    setInterval(update, 25)
+    document.getElementById("canvas")
 
-canvas.width = innerWidth
-canvas.height = innerHeight
+    canvas.width = innerWidth
+    canvas.height = innerHeight
 
-var x = 200
-var y = 100
+    //Purple Square
+    var x = 100
+    var y = 100
+    var speedX = 10
+    var speedY = 10
+    var ctx = canvas.getContext("2d")
+    ctx.fillStyle = "mediumpurple"
 
-var ctx = canvas.getContext("2d")
-var ctx2 = canvas.getContext("2d")
-var ctx3 = canvas.getContext("2d")
+    function update() {
 
-ctx.fillStyle="mediumpurple"
-ctx2.fillStyle="red"
-ctx3.fillStyle="green"
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.fillRect(x, y, 100, 100)
 
-function update(){
+        x = x + speedX
+        y = y + speedY
 
-ctx.clearRect(0,0,canvas.width,canvas.height)
-ctx.fillRect(x + 15,y - 10,100,100)
+        if (x >= canvas.width - 100){
+            speedX = -10
+        }
 
+        if (x <= 0){
+            speedX = 10
+        }
 
-ctx2.clearRect(0,0,canvas.width,canvas.height)
-ctx2.fillRect(x + 15, y - 4,100,100)
+        if (y>=canvas.height-100){
+            speedY = -10
+        }
 
-ctx3.clearRect(0,0,canvas.width,canvas.height)
-ctx3.fillRect(x - 15,y + 10,100,100)
-
-x = x + 5
-y = y + 5
-}
+        if (y <= 0){
+            speedY = 10
+        }
+    }
 
 </script>
