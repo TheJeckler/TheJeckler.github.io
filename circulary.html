@@ -20,45 +20,58 @@
     canvas.width = innerWidth
     canvas.height = innerHeight
 
-    //Purple Square
-    var x = 100
-    var y = 100
-    var speedX = Math.random()*15 + 10
-    var speedY = 10
+    var bol = [100, 300, 500]
+
+    //Bol
+    var x = [100, 300, 500]
+    var y = [100, 300, 500]
+    var speedX = [10, 15, 20]
+    var speedY = [10, 15, 20]
+    //var speedX = Math.random()*15 + 10
+    //var speedY = 10
     var ctx = canvas.getContext("2d")
     ctx.fillStyle = "mediumpurple"
 
+
     function update() {
+
+        //Make sure ClearRect is the first thing in the code     
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.beginPath()
-        ctx.arc(x,y,50,0,2 * Math.PI)
-
-        ctx.fill()
-
+        //ctx.beginPath()
+        //ctx.arc(x,y,50,0,2 * Math.PI)
+        //ctx.fill()
 
 
-        x = x + speedX
-        y = y + speedY
+        for (var i = 0; i < 3; i = i + 1) {
+            ctx.beginPath();
+            ctx.arc(x[i], y[i], 50, 0, 2 * Math.PI);
+            ctx.fill();
+            x[i] = x[i] + speedX[i]
+            y[i] = y[i] + speedY[i]
+        }
 
-        if (x >= canvas.width-60){
-            speedX = speedX*-1
-            ctx.fillStyle="hsl("+Math.random()*361+",100%,50%)"
+        //x = x + speedX
+        //y = y + speedY
+
+        if (x >= canvas.width - 60) {
+            speedX = speedX * -1
+            ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
 
         }
 
-        if (x <= 0){
-            speedX = speedX*-1
-            ctx.fillStyle="hsl("+Math.random()*361+",100%,50%)"
+        if (x <= 0) {
+            speedX = speedX * -1
+            ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
         }
 
-        if (y>=canvas.height-30){
-            speedY = speedY*-1
-            ctx.fillStyle="hsl("+Math.random()*361+",100%,50%)"
+        if (y >= canvas.height - 30) {
+            speedY = speedY * -1
+            ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
         }
 
-        if (y <= 0){
-            speedY = speedY*-1
-            ctx.fillStyle="hsl("+Math.random()*361+",100%,50%)"
+        if (y <= 0) {
+            speedY = speedY * -1
+            ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
         }
     }
 
