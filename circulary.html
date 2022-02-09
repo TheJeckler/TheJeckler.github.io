@@ -20,13 +20,14 @@
     canvas.width = innerWidth
     canvas.height = innerHeight
 
-    var bol = [100, 300, 500]
-
     //Bol
-    var x = [100, 300, 500]
-    var y = [100, 300, 500]
-    var speedX = [10, 15, 20]
-    var speedY = [10, 15, 20]
+    var x = []
+    var y = []
+    var speedX = []
+    var speedY = []
+    var radius = []
+
+
     //var speedX = Math.random()*15 + 10
     //var speedY = 10
     var ctx = canvas.getContext("2d")
@@ -37,42 +38,42 @@
 
         //Make sure ClearRect is the first thing in the code     
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        //ctx.beginPath()
-        //ctx.arc(x,y,50,0,2 * Math.PI)
-        //ctx.fill()
 
 
-        for (var i = 0; i < 3; i = i + 1) {
+
+        for (var i = 0; i < 10; i = i + 1) {
+
+            x.push(Math.random()*100)
+            y.push(Math.random()*100)
+            speedX.push(Math.random()*100)
+            speedY.push(Math.random()*100)
+            radius.push(Math.random()* Math.floor(Math.random()* 10 + 5))
+
             ctx.beginPath();
             ctx.arc(x[i], y[i], 50, 0, 2 * Math.PI);
             ctx.fill();
             x[i] = x[i] + speedX[i]
             y[i] = y[i] + speedY[i]
-        }
+            
 
-        //x = x + speedX
-        //y = y + speedY
-
-        if (x >= canvas.width - 60) {
-            speedX = speedX * -1
-            ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
-
-        }
-
-        if (x <= 0) {
-            speedX = speedX * -1
-            ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
-        }
-
-        if (y >= canvas.height - 30) {
-            speedY = speedY * -1
-            ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
-        }
-
-        if (y <= 0) {
-            speedY = speedY * -1
-            ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+            if (x[i] >= canvas.width - 60) {
+                speedX[i] = speedX[i] * -1
+                ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+            }
+            if (x[i] <= 0) {
+                speedX[i] = speedX[i] * -1
+                ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+            }
+            if (y[i] >= canvas.height - 30) {
+                speedY[i] = speedY[i] * -1
+                ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+            }
+            if (y[i] <= 0) {
+                speedY[i] = speedY[i] * -1
+                ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+            }
         }
     }
+
 
 </script>
