@@ -27,13 +27,15 @@
     var speedY = []
     var radius = []
 
-for (var i = 0; i <50; i = i + 1){
-    x.push(Math.random()*100)
-            y.push(Math.random()*100)
-            speedX.push(Math.random()*100)
-            speedY.push(Math.random()*100)
-            radius.push(Math.random()* Math.floor(Math.random()* 50 + 20))
-        }
+    document.getElementById("canvas").addEventListener("click", makeNewBall)
+
+    for (var i = 0; i < 1; i = i + 1) {
+        x.push(Math.random() * 100)
+        y.push(Math.random() * 100)
+        speedX.push(Math.random() * 100)
+        speedY.push(Math.random() * 100)
+        radius.push(Math.random() * Math.floor(Math.random() * 50 + 20))
+    }
 
     //var speedX = Math.random()*15 + 10
     //var speedY = 10
@@ -48,15 +50,15 @@ for (var i = 0; i <50; i = i + 1){
 
 
 
-        for (var i = 0; i < 50; i = i + 1) {
+        for (var i = 0; i < x.length; i = i + 1) {
 
-           
+
             ctx.beginPath();
             ctx.arc(x[i], y[i], radius[i], 0, 2 * Math.PI);
             ctx.fill();
             x[i] = x[i] + speedX[i]
             y[i] = y[i] + speedY[i]
-            
+
 
             if (x[i] >= canvas.width - 60) {
                 speedX[i] = speedX[i] * -1
@@ -77,5 +79,13 @@ for (var i = 0; i <50; i = i + 1){
         }
     }
 
+    //Making a new ball
+    function makeNewBall() {
+        x.push(Math.random() * 100)
+        y.push(Math.random() * 100)
+        speedX.push(Math.random() * 100)
+        speedY.push(Math.random() * 100)
+        radius.push(Math.floor(Math.random() * 50 + 20))
+    }
 
 </script>
