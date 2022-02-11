@@ -7,7 +7,7 @@
 
 <body>
 
-    <canvas id="canvas" width="600" height="600>" </canvas>
+    <canvas id="canvas" width="600" height="600" onmouseodwn="draw(event)" style="border:1px"> </canvas>
 
 </body>
 
@@ -26,6 +26,7 @@
     var speedX = []
     var speedY = []
     var radius = []
+    var mouse = [0,0]
 
     document.getElementById("canvas").addEventListener("click", makeNewBall)
 
@@ -81,11 +82,15 @@
 
     //Making a new ball
     function makeNewBall() {
-        x.push(Math.random() * 100)
-        y.push(Math.random() * 100)
+        var e = window.event;
+        x.push(e.clientX)
+        y.push(e.clientY)
+        document.value = x
+        document.value = y
         speedX.push(Math.random() * 100)
         speedY.push(Math.random() * 100)
         radius.push(Math.floor(Math.random() * 50 + 20))
+        
     }
 
 </script>
