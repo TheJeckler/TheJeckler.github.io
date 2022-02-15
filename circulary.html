@@ -26,15 +26,15 @@
     var speedX = []
     var speedY = []
     var radius = []
-    var mouse = [0,0]
+    var mouse = [0, 0]
 
     document.getElementById("canvas").addEventListener("click", makeNewBall)
 
     for (var i = 0; i < 1; i = i + 1) {
         x.push(Math.random() * 100)
         y.push(Math.random() * 100)
-        speedX.push(Math.random() * 100)
-        speedY.push(Math.random() * 100)
+        speedX.push(Math.random() * 30)
+        speedY.push(Math.random() * 30)
         radius.push(Math.random() * Math.floor(Math.random() * 50 + 20))
     }
 
@@ -53,29 +53,40 @@
 
         for (var i = 0; i < x.length; i = i + 1) {
 
+                ctx.beginPath();
+                ctx.arc(x[i], y[i], radius[i], 0, 2 * Math.PI);
+                ctx.fill();
+                x[i] = x[i] + speedX[i]
+                y[i] = y[i] + speedY[i]
 
-            ctx.beginPath();
-            ctx.arc(x[i], y[i], radius[i], 0, 2 * Math.PI);
-            ctx.fill();
-            x[i] = x[i] + speedX[i]
-            y[i] = y[i] + speedY[i]
 
+                if( x[i] === x[j]){
+                    speedX[i] = speedX[i] * -1
+                    speedY[i] = speedY[i] * -1
+                }
 
-            if (x[i] >= canvas.width - 60) {
-                speedX[i] = speedX[i] * -1
-                ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
-            }
-            if (x[i] <= 0) {
-                speedX[i] = speedX[i] * -1
-                ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
-            }
-            if (y[i] >= canvas.height - 30) {
-                speedY[i] = speedY[i] * -1
-                ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
-            }
-            if (y[i] <= 0) {
-                speedY[i] = speedY[i] * -1
-                ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+                if (x[i] >= canvas.width - 60) {
+                    speedX[i] = speedX[i] * -1
+                    ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+                }
+                if (x[i] <= 0) {
+                    speedX[i] = speedX[i] * -1
+                    ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+                }
+                if (y[i] >= canvas.height - 30) {
+                    speedY[i] = speedY[i] * -1
+                    ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+                }
+                if (y[i] <= 0) {
+                    speedY[i] = speedY[i] * -1
+                    ctx.fillStyle = "hsl(" + Math.random() * 361 + ",100%,50%)"
+                }
+
+                for (var j = 0; j < x.length; j = j + 1) {
+                    if( x[i] === x[j]){
+                    speedX[j] = speedX[i] * -1
+                    speedY[j] = speedY[i] * -1
+                }
             }
         }
     }
@@ -87,10 +98,10 @@
         y.push(e.clientY)
         document.value = x
         document.value = y
-        speedX.push(Math.random() * 100)
-        speedY.push(Math.random() * 100)
+        speedX.push(Math.random() * 30)
+        speedY.push(Math.random() * 30)
         radius.push(Math.floor(Math.random() * 50 + 20))
-        
+
     }
 
 </script>
