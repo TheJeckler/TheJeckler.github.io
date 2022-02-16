@@ -84,6 +84,7 @@
 
                 for (var j = 0; j < x.length; j = j + 1) {
                     if( x[i] === x[j]){
+                        
                     speedX[j] = speedX[i] * -1
                     speedY[j] = speedY[i] * -1
                 }
@@ -101,7 +102,6 @@
         speedX.push(Math.random() * 30)
         speedY.push(Math.random() * 30)
         radius.push(Math.floor(Math.random() * 50 + 20))
-
     }
 
 </script>
