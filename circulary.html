@@ -27,14 +27,16 @@
     var speedY = []
     var radius = []
     var mouse = [0, 0]
+    var tempX = speedX[i]
+    var tempY = speedY[i]
 
     document.getElementById("canvas").addEventListener("click", makeNewBall)
 
     for (var i = 0; i < 1; i = i + 1) {
         x.push(Math.random() * 100)
         y.push(Math.random() * 100)
-        speedX.push(Math.random() * 30)
-        speedY.push(Math.random() * 30)
+        speedX.push(Math.random() * 30 - 15)
+        speedY.push(Math.random() * 30 - 15)
         radius.push(Math.random() * Math.floor(Math.random() * 50 + 20))
     }
 
@@ -83,14 +85,20 @@
                 }
 
                 for (var j = 0; j < x.length; j = j + 1) {
-                    if( x[i] === x[j]){
+                    if(i !== j){
+                        if(Math.sqrt((Math.pow(x[i]-x[j],2)+Math.pow(y[i]-y[j],2)))){
+                            //d<=radius[i]+radius[j]
+                        
                         
                     speedX[j] = speedX[i] * -1
                     speedY[j] = speedY[i] * -1
+
+                        }
+                    }
                 }
             }
         }
-    }
+    
 
     //Making a new ball
     function makeNewBall() {
@@ -99,8 +107,8 @@
         y.push(e.clientY)
         document.value = x
         document.value = y
-        speedX.push(Math.random() * 30)
-        speedY.push(Math.random() * 30)
+        speedX.push(Math.random() * 30 - 15)
+        speedY.push(Math.random() * 30 - 15)
         radius.push(Math.floor(Math.random() * 50 + 20))
     }
 
