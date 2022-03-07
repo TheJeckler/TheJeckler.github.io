@@ -21,12 +21,75 @@
 </html>
 
 <script>
+    var sy = 0
+    var dx = 100
+    var dy = 100
+    var wpress = false
+    var apress = false
+    var spress = false
+    var dpress = false
+
+    addEventListener('keydown', keydown, false)
+    addEventListener('keyup', keyup, false)
+
+    //function keydown(e){
+        if (e.key === 'w'){
+            wpress = true
+        }
+        if (e.key === 'a'){
+            apress = true
+        }
+        if (e.key === 's'){
+            spress = true
+        }
+        if (e.key === 'd'){
+            dpress = true
+        }
+    }
+
+    //function keyup(e){
+        if (e.key === 'w'){
+            wpress = false
+        }
+        if (e.key === 'a'){
+            apress = false
+        }
+        if (e.key === 's'){
+            spress = false
+        }
+        if (e.key === 'd'){
+            dpress = false
+        }
+    }
 
     window.onload = function () {
         var c = document.getElementById("canvas")
         var img = document.getElementById("TheMoy")
         var ctx = c.getContext("2d")
-        ctx.drawImage(img, 0, 32, 32, 32, 100, 100, 100, 200)
+
+        setInterval(move, 50)
+        function move() {
+            if (sy === 0) {
+                sy = 32
+            } else {
+                sy = 0
+            }
+            ctx.clearRect(0, 0, 2000, 2000)
+            ctx.drawImage(img, 0, sy, 32, 32, dx, dy, 100, 200)
+        }
+            //if (wpress === true){
+                dy = dy - 3
+            }
+            if (spress === true){
+                dy = dy + 3
+            }
+            if (apress === true){
+                dy = dy - 3
+            }
+            //if (dpress === true){
+                dy = dy + 3
+            }
     }
+
 
 </script>
